@@ -1,6 +1,5 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -8,8 +7,9 @@ function writePassword() {
   passwordText.value = password;
 }
 var caseArray=[];
+
 var specialCharacters = [
-  '@',
+  '@', 
   '%',
   '+',
   '\\',
@@ -95,16 +95,14 @@ var upperCasedCharacters = [
 ];
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-if (generateBtn) {
 var useLowerCase = confirm("Do you want to include lowercase characters?")
 
 var useUpperCase = confirm("Do you want to include uppercase characters?")
 
-var useNumeric = confirm("Do you want to include special characters?")
+var useNumeric = confirm("Do you want to include number characters?")
 
-var useSpecial = confirm("Do you want to include number characters?")
-}
+var useSpecial = confirm("Do you want to include special characters?")
+
 while (useLowerCase == false && useUpperCase == false && useNumeric == false && useSpecial == false) {
   alert("Please select one type of character");
   useLowerCase=confirm("Do you want to include lowercase characters?");
